@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        ::placeholder {
+  color: white;
+  opacity: 1; 
+}
+        body{
+            background-color: rgb(0, 0, 34);
+            font-family: sans-serif;
+            color: white;
+            user-select: none;
+            margin: auto;
+        }
+        #Username{
+            width: 6.588579795021962vw;
+            height: auto;
+            padding-left: 0.36603221083455345vw;
+            padding-right: 0.36603221083455345vw;
+            font-size: 1.6837481698389458vw;
+            color: white;
+            margin-left: 46.3625183016106vw;
+            margin-top: 13.301610541727673vw;
+            background-color: rgb(19, 18, 18);
+            border-radius: 0.36603221083455345vw;
+        }
+        #StartDiv{
+            align-items: center;
+            text-align: center;
+        }
+        #Textboxname{
+            outline: none;
+            border-style: solid;
+            box-shadow: 0px 0px 10px red;
+            border: 0.07320644216691069vw red solid;
+            color: white;
+            background-color: rgb(19, 18, 18);
+            height: 4.566210045662101vh;
+            text-align: center;
+            font-size: 1.2445095168374818vw;
+        }
+        #button1{
+            display: block;
+            margin-left: 47.51625183016106vw;
+            margin-top: 3.9vh;
+            height: 4.566210045662101vh;
+            font-size: 1.2445095168374818vw;
+            width: 5.34407027818448vw;
+            color: white;
+            background-color: rgb(19, 18, 18);
+            border-style: solid;
+            box-shadow: 0px 0px 10px red;
+            border: 0.07320644216691069vw red solid;
+        }
+        #button1:hover{
+            background-color: black;
+        }
+    </style>
+    <div id="StartDiv">
+    <p id="Username">OSCore</p>
+    <input type="text" placeholder="Enter new username" id="Textboxname">
+    <button id="button1">Confirm</button>
+</div>
+<script>
+    let name = document.getElementById("Textboxname")
+    document.getElementById("button1").onclick = function(){
+        if(document.getElementById("Textboxname").value===""){
+            document.getElementById("button1").innerHTML="Box can't be empty"
+            document.getElementById("button1").style.width="13.882869692532942vw"
+            document.getElementById("button1").style.marginLeft="43.1vw"
+            document.getElementById("button1").disabled=true
+            setTimeout(function() {
+            document.getElementById("button1").innerHTML="Confirm";
+            document.getElementById("button1").style.width="5.34407027818448vw"
+            document.getElementById("button1").style.marginLeft="47.51625183016106vw"
+            document.getElementById("button1").disabled=false
+}, 1000);
+        }
+       else if(document.getElementById("Textboxname").value.length >6){
+        document.getElementById("button1").innerHTML="Box can't contain more than 6 symbols"
+            document.getElementById("button1").style.width="13.882869692532942vw"
+            document.getElementById("button1").style.marginLeft="43.1vw"
+            document.getElementById("button1").style.height="7.1566210045662101vh"
+            document.getElementById("Textboxname").value=""
+            document.getElementById("button1").disabled=true
+            setTimeout(function() {
+            document.getElementById("button1").innerHTML="Confirm";
+            document.getElementById("button1").style.width="5.34407027818448vw"
+            document.getElementById("button1").style.marginLeft="47.51625183016106vw"
+            document.getElementById("button1").style.height="4.566210045662101vh"
+            document.getElementById("button1").disabled=false
+}, 1500);
+       }
+        else(document.getElementById("Username").innerHTML=name.value,
+        document.getElementById("Textboxname").value="")
+    }
+</script>
+</body>
+</html>
