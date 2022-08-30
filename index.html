@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OSCore</title>
 </head>
 <body>
     <style>
@@ -45,7 +45,7 @@
             text-align: center;
             font-size: 1.2445095168374818vw;
         }
-        #button1{
+        #button1, #button2 ,#button3{
             display: block;
             margin-left: 47.51625183016106vw;
             margin-top: 3.9vh;
@@ -61,13 +61,52 @@
         #button1:hover{
             background-color: black;
         }
+        #button2:hover{
+            background-color: black;
+        }
+        #button3:hover{
+            background-color: black;
+        }
+        #rusure{
+            width: 26.35431918008785vw;
+            height: 45.662100456621005vh;
+            border-style: solid;
+            box-shadow: 0px 0px 10px red;
+            background-color: rgb(19, 18, 18);
+            border: 0.07320644216691069vw red solid;
+            margin-left: 36.571625183016106vw;
+            text-align: center;
+        }
+        #xdlol, #xdbruh{
+            font-size: 1.8301610541727673vw;
+        }
+        #xdbruh{
+            font-size: 1.4641288433382138vw;
+        }
+        #span1{
+            font-size: 1.8301610541727673vw;
+            color: green;
+        }
     </style>
     <div id="StartDiv">
     <p id="Username">OSCore</p>
     <input type="text" placeholder="Enter new username" id="Textboxname">
     <button id="button1">Confirm</button>
 </div>
+<div id="rusure">
+    <p id="xdlol">Are you sure?</p>
+    <p id="xdbruh">Are you sure you want to <br> keep your username as <br> <br>
+    <span id="span1">
+
+OSCore
+    </span>
+    <br> <br>
+    You can change it later
+    </p>
+    <button id="button2">Yes</button> <button id="button3">Change</button>
+</div>
 <script>
+    document.getElementById("rusure").style.visibility="hidden"
     let name = document.getElementById("Textboxname")
     document.getElementById("button1").onclick = function(){
         if(document.getElementById("Textboxname").value===""){
@@ -98,8 +137,29 @@
 }, 1500);
        }
         else(document.getElementById("Username").innerHTML=name.value,
-        document.getElementById("Textboxname").value="")
+        document.getElementById("span1").innerHTML=document.getElementById("Textboxname").value,
+        document.getElementById("Textboxname").value="",
+        document.getElementById("rusure").style.visibility="visible",
+        document.getElementById("button1").style.visibility="hidden",
+        document.getElementById("Textboxname").style.visibility="hidden",
+        document.getElementById("Username").style.visibility="hidden",
+        document.getElementById("rusure").style.marginTop="-14.11610541727673vw",
+        document.getElementById("button2").style.marginLeft="3.11610541727673vw",
+        document.getElementById("button3").style.marginLeft="18.11610541727673vw",
+        document.getElementById("button3").style.marginTop="-2.3vw"
+        )
     }
+    document.getElementById("button3").onclick = function(){
+        document.getElementById("rusure").style.marginTop="0vw"
+        document.getElementById("button1").style.visibility="visible",
+        document.getElementById("Textboxname").style.visibility="visible"
+        document.getElementById("Username").style.visibility="visible"
+        document.getElementById("rusure").style.visibility="hidden"
+        document.getElementById("Username").innerHTML="OSCore"
+            }
+            document.getElementById("button2").onclick = function(){
+                document.getElementById("button2").innerHTML="More coming soon!"
+            }
 </script>
 </body>
 </html>
